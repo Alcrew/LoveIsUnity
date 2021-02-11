@@ -2,21 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class RegisterValidation : MonoBehaviour
 {
     [SerializeField] GameObject _registerNameField;
-    //[SerializeField] GameObject _registerGender;
+    [SerializeField] GameObject _registerPanel;
+    [SerializeField] GameObject _mainPanel;
     //[SerializeField] GameObject _registerUserPhoto;
     [SerializeField] Image _signUpButton;
     [SerializeField] GameObject _maleCheckmark;
     [SerializeField] GameObject _femaleCheckmark;
 
+
+
     void Start()
     {
         _maleCheckmark.SetActive(false);
         _femaleCheckmark.SetActive(false);
-        Debug.Log($"Name: {_registerNameField.name}");
+        _mainPanel.SetActive(false);
+        _signUpButton.enabled = false;
     }
 
 
@@ -35,17 +40,31 @@ public class RegisterValidation : MonoBehaviour
 
     public void OnValidateRegister()
     {
-
-        if (!string.IsNullOrEmpty(_registerNameField.name))
-            //(_registerNameField != null) && (_maleCheckmark.activeSelf == true || _femaleCheckmark.activeSelf == true))
+        var input = _registerNameField.GetComponent<TMP_InputField>().text;
+        if (!string.IsNullOrEmpty(input) && (_maleCheckmark.activeSelf == true || _femaleCheckmark.activeSelf == true))
         {
-            _signUpButton.color = new Color32(69, 155, 255, 255);
+             _signUpButton.enabled = true;
+        } else
+        {
+            print("Chlens");
+            _signUpButton.enabled = false;
         }
     }
 
-    /*    public void cleanUpRegistartion()
+    public void clickSignUpButton()
+    {
+        if (_signUpButton.enabled == true)
         {
-            _maleCheckmark.SetActive(false);
-            _femaleCheckmark.SetActive(false);
-        }*/
+            _registerPanel.SetActive(false);
+            _mainPanel.SetActive(true);
+        }
+    }
+
+/*    public void cleanUpRegistartion()
+    {
+        _maleCheckmark.SetActive(false);
+        _femaleCheckmark.SetActive(false);
+        var input = _registerNameField.GetComponent<TMP_InputField>().text;
+        input.Insert(0, "");
+    }*/
 }

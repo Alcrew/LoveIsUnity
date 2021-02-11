@@ -2396,6 +2396,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _registerNameField: {fileID: 958821859}
+  _registerPanel: {fileID: 1281951481}
+  _mainPanel: {fileID: 1935185341}
   _signUpButton: {fileID: 1939545133}
   _maleCheckmark: {fileID: 1879053171}
   _femaleCheckmark: {fileID: 863378853}
@@ -2444,6 +2446,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 692767047}
         m_MethodName: SelectMaleGender
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 692767047}
+        m_MethodName: OnValidateRegister
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3387,7 +3400,7 @@ MonoBehaviour:
   m_GlobalFontAsset: {fileID: 11400000, guid: 0e71c966e9378fd4ca111231a2a27ab5, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
-  m_RestoreOriginalTextOnEscape: 1
+  m_RestoreOriginalTextOnEscape: 0
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
@@ -3441,6 +3454,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _registerNameField: {fileID: 958821859}
+  _registerPanel: {fileID: 1281951481}
+  _mainPanel: {fileID: 1935185341}
   _signUpButton: {fileID: 1939545133}
   _maleCheckmark: {fileID: 1879053171}
   _femaleCheckmark: {fileID: 863378853}
@@ -4409,6 +4424,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _registerNameField: {fileID: 958821859}
+  _registerPanel: {fileID: 1281951481}
+  _mainPanel: {fileID: 1935185341}
   _signUpButton: {fileID: 1939545133}
   _maleCheckmark: {fileID: 1879053171}
   _femaleCheckmark: {fileID: 863378853}
@@ -4457,6 +4474,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1366807396}
         m_MethodName: SelectFemaleGender
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1366807396}
+        m_MethodName: OnValidateRegister
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6504,6 +6532,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _registerNameField: {fileID: 958821859}
+  _registerPanel: {fileID: 1281951481}
+  _mainPanel: {fileID: 1935185341}
   _signUpButton: {fileID: 1939545133}
   _maleCheckmark: {fileID: 1879053171}
   _femaleCheckmark: {fileID: 863378853}
@@ -6528,10 +6558,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.27058825, g: 0.60784316, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 0.7411765, g: 0.85882354, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -6551,14 +6581,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1939545131}
-        m_MethodName: OnValidateRegister
+        m_MethodName: clickSignUpButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Hello
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1939545133
