@@ -12,15 +12,11 @@ public class AngelDevilButtons : MonoBehaviour
     [SerializeField] GameObject _actionPanel;
     [SerializeField] GameObject _proceedButton;
 
+
     void Start()
     {
-        //_playGamePanel.SetActive(true);
-        _actionPanel.SetActive(false);
-    }
-
-    void OnEnable()
-    {
-        cleanUp();
+        _angelCheckmark.SetActive(false);
+        _devilCheckmark.SetActive(false);
     }
 
     public void ClickAngel()
@@ -39,12 +35,12 @@ public class AngelDevilButtons : MonoBehaviour
         _playGamePanel.SetActive(false);
         _actionPanel.SetActive(true);
     }
-
+/*
     public void cleanUp()
     {
         _angelCheckmark.SetActive(false);
         _devilCheckmark.SetActive(false);
-    }
+    }*/
 
 
 }

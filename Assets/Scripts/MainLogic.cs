@@ -10,14 +10,34 @@ public class MainLogic : MonoBehaviour
     [SerializeField] GameObject _findMyPairPanel;
     [SerializeField] GameObject _helpPanel;
     [SerializeField] GameObject _loveShopPanel;
+    [SerializeField] GameObject _actionPanel;
+    [SerializeField] GameObject _angelCheckmark;
+    [SerializeField] GameObject _devilCheckmark;
 
     public void clickBackButtonGamePanel()
     {
         if (_playGamePanel == true) {
             _playGamePanel.SetActive(false);
             _mainPanel.SetActive(true);
-
+            cleanUp();
         } 
+    }
+
+
+    public void cleanUp()
+    {
+        _angelCheckmark.SetActive(false);
+        _devilCheckmark.SetActive(false);
+    }
+
+    public void clickBackButtonActionPanel()
+    {
+        if (_actionPanel == true)
+        {
+            _actionPanel.SetActive(false);
+            _playGamePanel.SetActive(true);
+
+        }
     }
 
     public void clickBackButtonFindMyPairPanel()
