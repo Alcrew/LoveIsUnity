@@ -13,21 +13,24 @@ public class MainLogic : MonoBehaviour
     [SerializeField] GameObject _actionPanel;
     [SerializeField] GameObject _angelCheckmark;
     [SerializeField] GameObject _devilCheckmark;
+    [SerializeField] Button _proceedButton;
+    [SerializeField] GameObject _userPhotoCheckmark;
 
     public void clickBackButtonGamePanel()
     {
         if (_playGamePanel == true) {
             _playGamePanel.SetActive(false);
             _mainPanel.SetActive(true);
-            cleanUp();
+            cleanUpGamePanel();
         } 
     }
 
 
-    public void cleanUp()
+    public void cleanUpGamePanel()
     {
         _angelCheckmark.SetActive(false);
         _devilCheckmark.SetActive(false);
+        _proceedButton.interactable = false;
     }
 
     public void clickBackButtonActionPanel()
@@ -48,6 +51,7 @@ public class MainLogic : MonoBehaviour
             _mainPanel.SetActive(true);
         }
     }
+
 
     public void clickBackButtonLoveShopPanel()
     {

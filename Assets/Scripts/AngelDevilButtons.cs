@@ -10,13 +10,14 @@ public class AngelDevilButtons : MonoBehaviour
     [SerializeField] GameObject _devilCheckmark;
     [SerializeField] GameObject _playGamePanel;
     [SerializeField] GameObject _actionPanel;
-    [SerializeField] GameObject _proceedButton;
+    [SerializeField] Button _proceedButton;
 
 
     void Start()
     {
         _angelCheckmark.SetActive(false);
         _devilCheckmark.SetActive(false);
+        _proceedButton.interactable = false;
     }
 
     public void ClickAngel()
@@ -30,17 +31,31 @@ public class AngelDevilButtons : MonoBehaviour
         _angelCheckmark.SetActive(false);
     }
 
-    public void ClickProceedButton()
+    public void OnValidateProceedButton()
     {
-        _playGamePanel.SetActive(false);
-        _actionPanel.SetActive(true);
+        if (_angelCheckmark.activeSelf == true || _devilCheckmark.activeSelf == true)
+        {
+            _proceedButton.interactable = true;
+        } else
+        {
+            _proceedButton.interactable = false;
+        }
     }
-/*
-    public void cleanUp()
+
+    public void clickProceedButton()
     {
-        _angelCheckmark.SetActive(false);
-        _devilCheckmark.SetActive(false);
-    }*/
+        if (_proceedButton.interactable == true)
+        {
+            _playGamePanel.SetActive(false);
+            _actionPanel.SetActive(true);
+        }
+    }
+    /*
+        public void cleanUp()
+        {
+            _angelCheckmark.SetActive(false);
+            _devilCheckmark.SetActive(false);
+        }*/
 
 
 }
